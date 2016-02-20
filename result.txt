@@ -1,0 +1,2 @@
+Name of object: "Stranger". Length is 3.457, width is 2.346, height is 1.423.
+The total square of your object "Stranger" is 32.743.

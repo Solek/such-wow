@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 
 int main()
 {
@@ -17,14 +16,25 @@ int main()
     printf("\n");
 
 	printf("Input height of your object: ");
-	scanf("%f", &height);   // узнать поподробнее про значок & и сканф
+	scanf("%f", &height);   // узнать подробнее про значок & и как не дать сломать вводом букв
     printf("\n");
 
-	printf("Input name of your object (no more than 20 symbols, without spaces): ");
+	printf("Input name of your object (no more than 20 symbols, without spaces): "); // на пробелы забил, запутался
 	scanf("%20s", &name);
     printf("\n");
 
-    printf("The sum of squares of your object \"%s\" is %.3f.", name, (2 * length * height + 2 * length * width + 2 * height * width));
+    //printf("The total square of your object \"%s\" is %.3f.", name, 2 * (length * height + length * width + height * width));
+
+    FILE * output;
+    if ((output = fopen("result.txt", "wt")) == 0) // открытие с проверкой на успешность выполнения
+        {
+    	printf("Error with opening or creating file!");
+    	return 0;
+        }
+
+    fprintf(output, "Name of object: \"%s\". Length is %.3f, width is %.3f, height is %.3f.\n", name, length, width, height);
+    fprintf(output, "The total square of your object \"%s\" is %.3f.\n", name, 2 * (length * height + length * width + height * width));
+    fclose(output);
 
     return 0;
 }
