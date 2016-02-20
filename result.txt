@@ -1,2 +1,12 @@
-Name of object: "Stranger". Length is 3.457, width is 2.346, height is 1.423.
-The total square of your object "Stranger" is 32.743.
+Name of object: "1st". Length is 1.000, width is 1.000, height is 1.000.
+The total square of your object "1st" is 6.000.
+
+Name of object: "2nd". Length is 1.234, width is 4.465, height is 45664.000.
+The total square of your object "2nd" is 520493.486.
+
+Name of object: "3rd". Length is 34242424.000, width is 0.000, height is 4324242.000.
+Object "s" doesn't exist!
+
+Name of object: "4th". Length is -1.000, width is 435.000, height is 100.000.
+Object "s" doesn't exist!
+
