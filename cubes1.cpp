@@ -2,20 +2,21 @@
 
 int main()
 {
-	int cycle;
+	//int cycle;
 	float height;
 	float length;
 	float width;
 	char name[20];
+	int refuse;
 
-	printf("How many objects do you plan to calculate? ");
-	scanf("%i", &cycle);
-	printf("\n");
-	if (cycle <= 0)
-	    {
-		printf("Okay, bye.");
-		return 0;
-	    }
+	//printf("How many objects do you plan to calculate? ");
+	//scanf("%i", &cycle);
+	//printf("\n");
+	//if (cycle <= 0)
+	//    {
+	//	printf("Okay, bye.");
+	//	return 0;
+	//    }
 
     FILE * output;
     if ((output = fopen("result.txt", "wt")) == 0) // открытие с проверкой на успешность выполнения
@@ -24,9 +25,12 @@ int main()
     	return 0;
         }
 
-	for (int i = 0; i < cycle; i++)
-	    {
-			printf("Input name of your %i object (no more than 20 symbols, without spaces): ", i + 1); // на пробелы забил, запутался
+    int i = 0; // пронумеровка вводимых объектов
+    int j = 0; // хак для прерывания
+
+    while (j < 1)
+        {
+			printf("Input name of your %i object: ", i + 1); // на пробелы забил, запутался
 			scanf("%20s", &name);
 			printf("\n");
 
@@ -48,7 +52,19 @@ int main()
 				fprintf(output, "The total square of your object \"%s\" is %.3f.\n\n", name, 2 * (length * height + length * width + height * width));
 
 			else
-				fprintf(output, "Object \"s\" doesn't exist!\n\n", name);
+				fprintf(output, "Object \"%s\" doesn't exist!\n\n", name);
+
+			printf("Do you want to input one more object?\n");
+		    printf("Type \"0\" if you are done with input or any positive number if not. ");
+			scanf("%d", &refuse);
+
+			if (refuse > 0)  // убогий костыль, но хоть работает. нужно разбираться
+				j = 0;
+
+			else
+				j++;
+
+			i++;
 		}
 
     fclose(output);
