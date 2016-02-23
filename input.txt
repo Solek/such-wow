@@ -1,15 +1,4 @@
-name  : 1st
-length: 1.0
-width : 2.0
-height: 3.0
-
-name  : 2nd
-length: 4
-width : 4
-height: 4
-
-name  : 3rd
-length: 1
-width : 1
-height: 0
-
+name 5 5 5
+name_new1 2 1 2
+namename 3 3 3
+naaaame 4 0 6
